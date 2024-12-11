@@ -1,0 +1,18 @@
+line-length = 120
+
+
+[lint]
+select = ["E", "F", "W292", "W293", "N", "R", "I", "ANN"]
+ignore = ["ANN002", "ANN003", "ANN202", "N805", "RET501",]
+# ANN002: Missing type annotation for `*args`
+# ANN003: Missing type annotation for `**kwargs`
+# ANN202: Missing return type annotation for private function `wrapper`
+# N805: First argument should be `self` in class methods
+#    - we use `cls` in Pydantic validators.
+# RET501: Do not explicitly `return None` in function if it is the only possible return value
+#    - `return None` is the desired behaviour is some cases, eg. delete functions.
+
+[format]
+quote-style = "single"
+indent-style = "tab"
+docstring-code-format = true
